@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAE Style Section with Header, Image & Footer</title>
+  <link rel="stylesheet" href="./Index.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden; /* only hide horizontal scroll */
+    }
+
+    header, footer {
+      width: 100%;
+      background-color: #111;
+      padding: 20px 50px;
+      position: fixed;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    header {
+      top: 0;
+    }
+
+    footer {
+      bottom: 0;
+      border-top: 1px solid #222;
+    }
+
+    main {
+      padding-top: 100px; /* space for fixed header */
+      padding-bottom: 100px; /* space for fixed footer */
+    }
+
+    .trae-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      background: url("your-background-image.jpg") no-repeat center center/cover;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 30px;
+    }
+
+    .card {
+      background-color: #111;
+      border-radius: 15px;
+      min-width: 400px;
+      padding: 20px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      border: 1px solid #222;
+    }
+
+    .card:hover {
+      transform: translateY(-0px);
+      border-color: #00ff99;
+      box-shadow: 0 0 15px #00ff99;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      color: #00ff99;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Optional: scrollbar styling */
+    .scroll-container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #00ff99;
+      border-radius: 5px;
+    }
+
+    /* Image Section before footer */
+    .image-section {
+      width: 100%;
+      padding: 50px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TRAE</div>
+    <nav>
+      <a href="#">Product</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+      <a href="#">Docs</a>
+      <a href="#">Community</a>
+      <button class="btn btn-login">Log in</button>
+      <button class="btn btn-download">Download</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="trae-section">
+      <h1 class="section-title">What You'll Unlock with TRAE 
+        <a href="./index.html" style="font-style: italic; color: #00ff99; margin-left:20px; font-size: small;"> GO to Home </a>
+      </h1> 
+      <div class="scroll-container">
+        
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250/0f0/000?text=Card+1" alt="card1">
+          <h2>From Idea to Launch</h2>
+          <p>AI integrated into the entire development lifecycle. TRAE helps you design, code, and deploy faster.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250/0f0/000?text=Card+2" alt="card2">
+          <h2>Ship Autonomously</h2>
+          <p>SOLO, your context engineer, automates repetitive tasks and improves your workflow efficiency.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250/0f0/000?text=Card+3" alt="card3">
+          <h2>Two Dev Modes</h2>
+          <p>Seamlessly switch between IDE and SOLO mode without losing productivity or control.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/400x250/0f0/000?text=Card+4" alt="card4">
+          <h2>Granular Control</h2>
+          <p>Work how you want with complete visibility and collaboration across your entire dev workflow.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Image section before footer -->
+    <section class="image-section">
+      <img src="./Image/digital-art-dark-cosmic-night-sky.jpg" alt="Before Footer Image">
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TRAE. All rights reserved.</p>
+    <p>Follow us on: <a href="#" style="color:#00ff99; text-decoration:none;">Twitter</a> | <a href="#" style="color:#00ff99; text-decoration:none;">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    // Smooth horizontal scroll when mouse wheel moves vertically
+    const scrollContainer = document.querySelector('.scroll-container');
+    scrollContainer.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      scrollContainer.scrollLeft += e.deltaY;
+    });
+  </script>
+</body>
+</html>
